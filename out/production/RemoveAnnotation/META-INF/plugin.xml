@@ -1,0 +1,68 @@
+<idea-plugin >
+  <id>com.cz.removeannatation</id>
+  <name>RemoveAnnotation</name>
+  <version>1.2.0</version>
+  <vendor email="bingo110@126.com" url="about:blank">cz</vendor>
+
+  <description>
+    <![CDATA[
+    <html>
+   <h1>What's the plugin</h1>
+
+   <br>An Android Studio plugin to help remove use of ButterKnife</br>
+
+
+   <h1> Why i do this</h1>
+
+   <br>ButterKnife is a wellknow open source tool to help you inject your view, but some times, you use plugin to gen butterknife's code, but you don't want to use it again.</br>
+   <br> It's a very horrible job to delete every line inject code and write findviewbyid code, so, i made this plugin to do it. </br>
+
+
+   <h1>How to use it</h1>
+
+   <br>1.Clone the code and build it in your idea </br>
+   <br>2.Then, you can find a jar, install it as a plugin in your AndroidStudio(You also can find the jar in the project)</br>
+   <br>3.Open your Activity/Fragment you want to change.</br>
+   <br>4.Find the RemoveButterKnife button in your android studio edit menu</br>
+    </html>
+     ]]>
+  </description>
+
+  <change-notes>
+    <![CDATA[
+    <html>
+   <h1>What's new</h1>
+   <br>Can keep the view order after remove butterknife.</br>
+    </html>
+     ]]>
+  </change-notes>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+  <idea-version since-build="141.0"/>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+       on how to target different products -->
+  <!-- uncomment to enable plugin in all products
+  <depends>com.intellij.modules.lang</depends>
+  -->
+
+  <extensions defaultExtensionNs="com.intellij">
+    <!-- Add your extensions here -->
+    <moduleConfigurable instance="com.cz.removeannatation.ui.ConvertConfation"/>
+  </extensions>
+
+  <actions>
+    <!-- Add your actions here -->
+    <action id="removeAnnotation" class="com.cz.removeannatation.RemoveAction"
+            text="ConvertAnnotation"
+            description="remove java class annotation">
+      <add-to-group group-id="GenerateGroup" anchor="last"/>
+    </action>
+
+    <action id="removePackageAnnotation" class="com.cz.removeannatation.RemovePackageAction"
+            text="ConvertAnnotation" description="remove java class package annotation">
+      <add-to-group group-id="ProjectViewPopupMenuRefactoringGroup" anchor="first"/>
+    </action>
+  </actions>
+
+</idea-plugin>
