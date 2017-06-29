@@ -63,7 +63,7 @@ class DialogConverter(factory: PsiElementFactory, file: PsiJavaFileImpl, clazz: 
                         if (null != innerChild) {
                             if(null!=lastChild && innerChild.text == "setContentView"){
                                 //加入方法
-                                body.addAfter(factory.createStatementFromText("${configuration.methodName}();", clazz), innerChild)
+                                body.addAfter(factory.createStatementFromText("${configuration.methodName}();", clazz), statement)
                             } else {
                                 val innerChild = innerChild.firstChild
                                 if(innerChild is PsiReferenceExpressionImpl){
