@@ -5,7 +5,7 @@ Id转换插件:
 * 插件功能
 	* 支持单个类直接转换注入代码
 	* 支持完级递归替换
-	* 提供了良好的扩展机制(目前支持Activity/Fragment/Dialog/RecyclerView.ViewHolder),但拥有良好的扩展机制
+	* 提供了良好的扩展机制(目前支持Activity/Fragment/Dialog/RecyclerView.ViewHolder)
 	* 支持自定义注解配置,目前支持功能为
 		* BindInit-初始化类
 		* BindActivity-绑定类
