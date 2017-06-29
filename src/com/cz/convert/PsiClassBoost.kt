@@ -7,6 +7,8 @@ import com.intellij.psi.PsiClass
  */
 val ACTIVITY="android.app.Activity"
 val DIALOG="android.app.Dialog"
+val VIEW="android.view.View"
+val VIEW_HOLDER="android.support.v7.widget.RecyclerView.ViewHolder"
 val FRAGMENT_ITEMS= arrayOf("android.app.Fragment","android.support.v4.app.Fragment")
 fun PsiClass.isActivity():Boolean=condition(this){it==ACTIVITY}
 
@@ -14,6 +16,10 @@ fun PsiClass.isFragment():Boolean= condition(this){ qualifiedName->FRAGMENT_ITEM
 
 
 fun PsiClass.isDialog():Boolean=condition(this){it==DIALOG}
+
+fun PsiClass.isView():Boolean=condition(this){it==VIEW}
+
+fun PsiClass.isViewHolder():Boolean=condition(this){it==VIEW_HOLDER}
 
 fun condition(clazz:PsiClass,closure:(String?)->Boolean):Boolean{
     var result=false

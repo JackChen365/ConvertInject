@@ -13,7 +13,6 @@ import com.intellij.psi.util.PsiUtilBase
  * Created by cz on 2017/6/16.
  */
 class ConvertAction : BaseGenerateAction {
-
     constructor() : super(null)
 
     constructor(handler: CodeInsightActionHandler) : super(handler)
@@ -28,7 +27,8 @@ class ConvertAction : BaseGenerateAction {
                 } else {
                     val clazz = getTargetClass(editor, psiFile)
                     if(null!=clazz){
-                        ConvertInjectAction(project, psiFile, clazz).run()
+                        val configuration = Template.loadTemplateItems(project)
+                        ConvertInjectAction(project, psiFile, clazz,true,configuration).run()
                     }
                 }
             }

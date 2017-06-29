@@ -36,7 +36,9 @@ object MessageDelegate {
     }
 
     fun showMessage(message: String, header: String) {
-        Messages.showDialog(message, header, arrayOf("ok"), -1, null)
+        ApplicationManager.getApplication().invokeLater {
+            Messages.showDialog(message, header, arrayOf("ok"), -1, null)
+        }
     }
 
 }
